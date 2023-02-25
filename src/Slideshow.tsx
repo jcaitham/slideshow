@@ -21,7 +21,7 @@ export const SlideshowCard = ({ children, style, className }: { children: React.
  * Will size itself to fill its container and will resize if the window resizes 
  * @param props The special children property, the desired width for each card, in pixels, plus any style overrides that you might like to apply to the list (like margins)
  */
-const Slideshow = ({ children, cardWidth, style }: { children: React.ReactNode[], cardWidth: number, style?: React.CSSProperties; }) =>
+const Slideshow = ({ children, cardWidth, style, className }: { children: React.ReactNode[], cardWidth: number, style?: React.CSSProperties, className?: string; }) =>
 {
 	const data = useRef({ cardWidth: 0, totalWidth: 0, distancePerScroll: 0, windowWidth: 0 });
 
@@ -78,7 +78,7 @@ const Slideshow = ({ children, cardWidth, style }: { children: React.ReactNode[]
 	};
 
 	return (
-		<div className="slideshowWrapper" ref={containerRef} style={{ ...style }}>
+		<div className={"slideshowWrapper " + className} ref={containerRef} style={{ ...style }}>
 			<div className="slideshow" style={{ gap: listGap, left: (-scrollOffset + "px") }}>
 				{React.Children.map(children, child =>
 				{

@@ -13,7 +13,7 @@ export const SlideshowCard = ({ children, style, className }) => {
  * Will size itself to fill its container and will resize if the window resizes
  * @param props The special children property, the desired width for each card, in pixels, plus any style overrides that you might like to apply to the list (like margins)
  */
-const Slideshow = ({ children, cardWidth, style }) => {
+const Slideshow = ({ children, cardWidth, style, className }) => {
     const data = useRef({ cardWidth: 0, totalWidth: 0, distancePerScroll: 0, windowWidth: 0 });
     const [contentRemainingToLeft, setContentRemainingToLeft] = useState(0);
     const [contentRemainingToRight, setContentRemainingToRight] = useState(0);
@@ -50,7 +50,7 @@ const Slideshow = ({ children, cardWidth, style }) => {
         setContentRemainingToLeft(contentRemainingToLeft - data.current.distancePerScroll);
         setContentRemainingToRight(contentRemainingToRight + data.current.distancePerScroll);
     };
-    return (React.createElement("div", { className: "slideshowWrapper", ref: containerRef, style: Object.assign({}, style) },
+    return (React.createElement("div", { className: "slideshowWrapper " + className, ref: containerRef, style: Object.assign({}, style) },
         React.createElement("div", { className: "slideshow", style: { gap: listGap, left: (-scrollOffset + "px") } }, React.Children.map(children, child => {
             if (React.isValidElement(child)) {
                 const returnValue = React.cloneElement(child, {
