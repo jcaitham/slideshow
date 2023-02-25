@@ -1,0 +1,82 @@
+.slideshowWrapper {
+	position: relative;
+	display: flex;
+	overflow-x: hidden;
+	box-sizing: border-box;
+	width: 100%;
+
+	.slideshow {
+		display: flex;
+		flex-direction: row;
+		position: relative;
+		left: 0;
+		transition: left .3s;
+		padding: 20px;
+
+		.card {
+			overflow: hidden;
+			flex-shrink: 0;
+			box-sizing: border-box;
+		}
+	}
+
+	.floatingArrow {
+		position: absolute;
+		top: 0;
+		height: 100%;
+		width: 40px;
+		font-size: 80px;
+		vertical-align: middle;
+		overflow: hidden;
+		opacity: .5;
+		transition: opacity .5s;
+		border-radius: 8px;
+		cursor: pointer;
+
+
+		&.disabled {
+			display: none;
+		}
+
+		&.left {
+			left: 0;
+			background: rgba(150, 150, 150, .8);
+			mask-image: -webkit-gradient(linear, center top, right top, from(rgba(255, 255, 255, .8)), to(rgba(0, 0, 0, 0)));
+		}
+
+		&.right {
+			right: 0;
+			background: rgba(150, 150, 150, .8);
+			mask-image: -webkit-gradient(linear, center top, left top, from(rgba(255, 255, 255, .8)), to(rgba(0, 0, 0, 0)));
+		}
+
+		&:hover {
+			opacity: 1;
+			backdrop-filter: blur(1px);
+		}
+
+		.arrow {
+			border: 5px solid darkslategray;
+			height: 100px;
+			width: 100px;
+			position: relative;
+			top: 50%;
+
+			transform: translateY(-50%) rotate(45deg);
+
+			&.left {
+				left: 30px;
+			}
+
+			&.right {
+				right: 100px;
+			}
+		}
+	}
+
+	.shadow {
+		box-shadow: 2px 2px 10px;
+	}
+
+
+}

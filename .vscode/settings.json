@@ -1,0 +1,17 @@
+{
+	"files.exclude": {
+		"**/.git": true,
+		"**/.svn": true,
+		"**/*.js": {
+			"when": "$(basename).tsx"
+		},
+		"**/.hg": true,
+		"**/CVS": true,
+		"**/.DS_Store": true,
+		"**/Thumbs.db": true,
+		"**/*.map": true,
+		"**/*.css": {
+			"when": "$(basename).scss"
+		}
+	}
+}
