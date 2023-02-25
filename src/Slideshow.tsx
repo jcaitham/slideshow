@@ -7,10 +7,10 @@ import "./Slideshow.scss";
  * rather than hard-coding any specific pixel widths
  * @param props Special children property, plus any style overrides that you might like to apply to the card (such as border-radius)
  */
-export const SlideshowCard = ({ children, style }: { children: React.ReactNode, style?: React.CSSProperties; }) =>
+export const SlideshowCard = ({ children, style, className }: { children: React.ReactNode, style?: React.CSSProperties, className?: string; }) =>
 {
 	return (
-		<article className="highlightWhite background card shadow" style={{ ...style }}>
+		<article className={"highlightWhite background card shadow " + className} style={{ ...style }} >
 			{children}
 		</article>
 	);

@@ -5,8 +5,8 @@ import "./Slideshow.scss";
  * rather than hard-coding any specific pixel widths
  * @param props Special children property, plus any style overrides that you might like to apply to the card (such as border-radius)
  */
-export const SlideshowCard = ({ children, style }) => {
-    return (React.createElement("article", { className: "highlightWhite background card shadow", style: Object.assign({}, style) }, children));
+export const SlideshowCard = ({ children, style, className }) => {
+    return (React.createElement("article", { className: "highlightWhite background card shadow " + className, style: Object.assign({}, style) }, children));
 };
 /**
  * A simple slideshow component.  Will show a horizontal list of cards along with scroll arrows to move left & right through the list.
