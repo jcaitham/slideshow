@@ -53,9 +53,10 @@ const Slideshow = ({ children, cardWidth, style }) => {
     return (React.createElement("div", { className: "slideshowWrapper", ref: containerRef, style: Object.assign({}, style) },
         React.createElement("div", { className: "slideshow", style: { gap: listGap, left: (-scrollOffset + "px") } }, React.Children.map(children, child => {
             if (React.isValidElement(child)) {
-                return React.cloneElement(child, {
+                const returnValue = React.cloneElement(child, {
                     style: Object.assign(Object.assign({}, child.props.style), { width: data.current.cardWidth + "px" })
                 });
+                return returnValue;
             }
         })),
         React.createElement("div", { className: "floatingArrow left" + (contentRemainingToLeft <= 0 ? " disabled" : ""), onClick: decrementScroll },

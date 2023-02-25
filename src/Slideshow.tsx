@@ -85,9 +85,10 @@ const Slideshow = ({ children, cardWidth, style }: { children: React.ReactNode[]
 				{
 					if (React.isValidElement(child))
 					{
-						return React.cloneElement(child as React.ReactElement, {
+						const returnValue = React.cloneElement(child as React.ReactElement, {
 							style: { ...child.props.style, width: data.current.cardWidth + "px" }
 						});
+						return returnValue;
 					}
 				})}
 			</div>

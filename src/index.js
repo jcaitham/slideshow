@@ -27,7 +27,7 @@ const contents = [
             React.createElement("p", null, "This is a few paragraphs of description text for this slideshow card.  Hopefully it wraps at least a couple times.  "))),
 ];
 const root = ReactDOM.createRoot(document.getElementById('root'));
-const cards = contents.map((card, index) => React.createElement(SlideshowCard, { key: index }, card));
+const cards = contents.map((card, index) => React.createElement(SlideshowCard, { key: index, style: { width: 125, paddingLeft: 40 } }, card));
 root.render(React.createElement(React.Fragment, null,
     React.createElement(Slideshow, { cardWidth: 100 }, cards),
     React.createElement(Slideshow, { cardWidth: 500 }, cards)));

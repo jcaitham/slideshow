@@ -38,7 +38,7 @@ const contents = [
 
 const root = ReactDOM.createRoot(document.getElementById('root') as any);
 
-const cards = contents.map((card, index) => <SlideshowCard key={index}>{card}</SlideshowCard>);
+const cards = contents.map((card, index) => <SlideshowCard key={index} style={{ width: 125, paddingLeft: 40 }}>{card}</SlideshowCard>);
 root.render(
 	<>
 		<Slideshow cardWidth={100}>{cards}</Slideshow>
