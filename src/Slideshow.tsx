@@ -30,7 +30,6 @@ const Slideshow = ({ children, cardWidth, style }: { children: React.ReactNode[]
 
 	const [scrollOffset, setScrollOffset] = useState(0);
 
-
 	const listGap = 20;
 	const containerRef = useRef<HTMLDivElement | null>(null);
 
@@ -42,7 +41,7 @@ const Slideshow = ({ children, cardWidth, style }: { children: React.ReactNode[]
 		}
 		const windowWidth = containerRef.current.clientWidth;  // width of the "window" through which we are looking at the card list
 
-		const totalWidth = children.length * (cardWidth + listGap);  // total width required by the list of cards
+		const totalWidth = children.length * (cardWidth + listGap) + listGap;  // total width required by the list of cards
 
 		setContentRemainingToRight(totalWidth - windowWidth);
 		setContentRemainingToLeft(0);

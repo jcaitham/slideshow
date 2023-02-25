@@ -25,7 +25,7 @@ const Slideshow = ({ children, cardWidth, style }) => {
             return;
         }
         const windowWidth = containerRef.current.clientWidth; // width of the "window" through which we are looking at the card list
-        const totalWidth = children.length * (cardWidth + listGap); // total width required by the list of cards
+        const totalWidth = children.length * (cardWidth + listGap) + listGap; // total width required by the list of cards
         setContentRemainingToRight(totalWidth - windowWidth);
         setContentRemainingToLeft(0);
         setScrollOffset(0);
